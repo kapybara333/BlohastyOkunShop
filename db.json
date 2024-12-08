@@ -2,24 +2,24 @@
    "products": [
     {
         "id": 1,
-        "name": "lays",
+        "name": "best lays",
         "sirname": "crips",
         "photo_url": "https://producto.com.ua/image/cache/catalog/111/PEPSI/313194231-1000x1000.jpg",
-        "price": 600
+        "price": 30
     },
     {
         "id": 2,
-        "name": "lays",
+        "name": "bad lays",
         "sirname": "crips",
         "photo_url": "https://producto.com.ua/image/cache/catalog/111/PEPSI/313194231-1000x1000.jpg",
-        "price": 600
+        "price": 10
     },
     {
         "id": 3,
-        "name": "lays",
+        "name": "not bad lays",
         "sirname": "crips",
         "photo_url": "https://producto.com.ua/image/cache/catalog/111/PEPSI/313194231-1000x1000.jpg",
-        "price": 600
+        "price": 20
     },
     {
         "id": 4,
