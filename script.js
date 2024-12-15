@@ -1,9 +1,12 @@
 let cartProd = document.getElementById('cart-products');
 let cart = [];
 let productsGrid = document.getElementById('products-grid');
-let productsArray = [];
+let productsArray;
+
 let xhr = new XMLHttpRequest();
 let url = 'https://my-json-server.typicode.com/kapybara333/BlohastyOkunShop';
+
+
 xhr.open('GET',url + '/products');
 xhr.responseType = 'json'
 xhr.onload = function() {
@@ -34,4 +37,9 @@ function addProductToCart(id) {
         return p.id == id;
     })
     cart.push(product);
+}
+
+if(localStorage.getItem('cart')) {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    drawCartProducts();
 }
