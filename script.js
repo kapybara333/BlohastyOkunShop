@@ -28,3 +28,10 @@ xhr.send();
 function openCart() {
     cartProd.classList.toggle('hide');
 }
+
+function addProductToCart(id) {
+    let product = productsArray.find(function(p) {
+        return p.id == id;
+    })
+    cart.push(product);
+}
