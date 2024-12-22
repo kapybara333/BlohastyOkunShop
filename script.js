@@ -1,18 +1,11 @@
-let cartProd = document.getElementById('cart-products');
-let cart = [];
 let productsGrid = document.getElementById('products-grid');
-let productsArray;
-
+let productsArray = [];
 let xhr = new XMLHttpRequest();
-let url = 'https://my-json-server.typicode.com/kapybara333/BlohastyOkunShop';
-
-let my_headers = {
-    "content-type": "application/json",
-    "x-apikey": "67682325e70533a4333584e7",
-    "cache-control": "no-cache",
-}
-
+let url = 'https://kapybarashop-6f07.restdb.io/rest';
 xhr.open('GET',url + '/products');
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("x-apikey", "67682325e70533a4333584e7");
+xhr.setRequestHeader("cache-control", "no-cache");
 xhr.responseType = 'json'
 xhr.onload = function() {
     productsArray = xhr.response
@@ -26,32 +19,22 @@ xhr.onload = function() {
             <img class='product-photo' src='${p.photo_url}' alt='${p.name}'>
             <p class='product-price'><b>Price: </b>${p.price}$</p>
             <p class='product-description'><b>Description: </b>${p.description}</p>
-            <a href='userProfile.html?id=${p.author_id}'>Seller profile</a>
-            <button onclick="addProductToCart(${p.id})">Buy</button>
+            <button onclick="addProductToCart('${p._id}')">Buy</button>
         `;
         productsGrid.append(pElem);
     });
 }
 xhr.send();
-function openCart() {
-    cartProd.classList.toggle('hide');
-}
-
-function addProductToCart(id) {
-    let product = productsArray.find(function(p) {
-        return p.id == id;
-    })
-    cart.push(product);
-}
-
+// CART ----------------
+let cartProd = document.getElementById('cart-products');
+let cart = [];
 if(localStorage.getItem('cart')) {
     cart = JSON.parse(localStorage.getItem('cart'));
     drawCartProducts();
 }
-
 function addProductToCart(id) {
     let product = productsArray.find(function(p) {
-        return p.id == id;
+        return p._id == id;
     })
     cart.push(product);
     drawCartProducts();
@@ -82,3 +65,7 @@ function buyAll() {
     cartProd.innerHTML = 'Money was withdrawn from your credit card';
     localStorage.setItem("cart", '[]');
 }
+function openCart() {
+    cartProd.classList.toggle('hide');
+}
+
