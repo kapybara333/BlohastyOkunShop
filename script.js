@@ -6,6 +6,11 @@ let productsArray;
 let xhr = new XMLHttpRequest();
 let url = 'https://my-json-server.typicode.com/kapybara333/BlohastyOkunShop';
 
+let my_headers = {
+    "content-type": "application/json",
+    "x-apikey": "67682325e70533a4333584e7",
+    "cache-control": "no-cache",
+}
 
 xhr.open('GET',url + '/products');
 xhr.responseType = 'json'
