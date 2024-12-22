@@ -14,7 +14,7 @@ productForm.addEventListener('submit', function(event){
         console.log(this.responseText);
     }
     });
-    xhr.open("POST", "https://kapybarashop-6f07.restdb.io/rest");
+    xhr.open("POST", "https://kapybarashop-6f07.restdb.io/rest/kapybarashop");
     xhr.setRequestHeader("content-type", "application/json");
     xhr.setRequestHeader("x-apikey", "67682325e70533a4333584e7");
     xhr.setRequestHeader("cache-control", "no-cache");
