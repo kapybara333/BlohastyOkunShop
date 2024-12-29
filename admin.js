@@ -26,7 +26,7 @@ productForm.addEventListener('submit', function(event){
 })
 let orders = document.getElementById('admin_page_orders');
 let xhr = new XMLHttpRequest();
-xhr.open("GET", "https://kapybarashop-6f07.restdb.io/rest/order");
+xhr.open("GET", "https://kapybarashop-6f07.restdb.io/rest/order/");
 xhr.responseType = 'json'
 xhr.setRequestHeader("content-type", "application/json");
 xhr.setRequestHeader("x-apikey", "67682325e70533a4333584e7");
@@ -76,7 +76,7 @@ function complete(id) {
             alert('Server error. Try again later');
         }
     }
-    xhr.open("PUT", "https://kapybarashop-6f07.restdb.io/rest/order"+id);
+    xhr.open("PUT", "https://kapybarashop-6f07.restdb.io/rest/order/"+id);
     xhr.setRequestHeader("content-type", "application/json");
     xhr.setRequestHeader("x-apikey", "67682325e70533a4333584e7");
     xhr.setRequestHeader("cache-control", "no-cache");
