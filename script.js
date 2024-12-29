@@ -1,8 +1,8 @@
 let productsGrid = document.getElementById('products-grid');
 let productsArray = [];
 let xhr = new XMLHttpRequest();
-let url = 'https://kapybarashop-6f07.restdb.io/rest/kapybarashop';
-xhr.open('GET',url + '/products');
+let url = 'https://kapybarashop-6f07.restdb.io/rest';
+xhr.open('GET',url + '/kapybarashop');
 xhr.setRequestHeader("content-type", "application/json");
 xhr.setRequestHeader("x-apikey", "67682325e70533a4333584e7");
 xhr.setRequestHeader("cache-control", "no-cache");
@@ -104,7 +104,7 @@ document.getElementById('order-form').addEventListener('submit', function(e) {
         "products": localStorage.getItem('cart')
       });
       var xhr = new XMLHttpRequest();
-      xhr.open("POST", url + "/orders");
+      xhr.open("POST", url + "/order");
       xhr.setRequestHeader("content-type", "application/json");
       xhr.setRequestHeader("x-apikey", "67682325e70533a4333584e7");
       xhr.setRequestHeader("cache-control", "no-cache");

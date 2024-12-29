@@ -20,7 +20,7 @@ productForm.addEventListener('submit', function(event){
     };
     xhr.open("POST", "https://kapybarashop-6f07.restdb.io/rest/kapybarashop");
     xhr.setRequestHeader("content-type", "application/json");
-    xhr.setRequestHeader("x-apikey", "61b3ca4f72a03f5dae8222ad");
+    xhr.setRequestHeader("x-apikey", "67682325e70533a4333584e7");
     xhr.setRequestHeader("cache-control", "no-cache");
     xhr.send(data);
 })
